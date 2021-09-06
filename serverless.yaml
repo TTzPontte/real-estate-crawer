@@ -1,11 +1,13 @@
 service: real-estate-crawler
-
 frameworkVersion: '2'
 
 provider:
   name: aws
   runtime: nodejs14.x
-  lambdaHashVersion: 20201221
+  lambdaHashingVersion: 20201221
+  timeout: 28
+  memorySize: 2048
+  versionFunctions: false
   deploymentBucket:
     name: real-estate-crawler-dev
 
@@ -13,7 +15,7 @@ functions:
   urlCrawler:
     handler: handler.urlCrawler
     events:
-      - http:
+      - httpApi:
           path: /
           method: get
 
@@ -22,6 +24,6 @@ plugins:
 
 custom:
   serverless-layers:
-    functions: # optional
-      - urlCrawler
-    dependenciesPath: ./package.json
+    # applies for all lambdas 
+    - common:
+        dependenciesPath: ./package.json

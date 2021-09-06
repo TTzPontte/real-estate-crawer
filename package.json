@@ -9,13 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "cloudflare-scraper": "^1.0.8",
-    "puppeteer-extra": "^3.1.18",
-    "puppeteer-extra-plugin-stealth": "^2.7.8"
+    "chrome-aws-lambda": "^10.1.0"
   },
   "devDependencies": {
     "serverless": "^2.57.0",
-    "serverless-layers": "^2.5.1"
+    "serverless-layers": "^1.5.0"
   }
 }
